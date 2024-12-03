@@ -8,25 +8,96 @@ const errimage = ref(errimageData)
 </script>
 
 <template>
-  <div class="error-container">
-    <img :src="errimage" class="error-image" />
-    <p class="error-text">{{ main.errorMessage }}</p>
-    <p class="error-text">{{ main.errorDetails }}</p>
+  <div class="error-page">
+    <nav class="nav-header">
+      <div class="logo">Kolibri</div>
+    </nav>
+
+    <div class="error-container">
+      <div class="error-content">
+        <p class="error-text">{{ main.errorMessage }}</p>
+        <p class="error-text">{{ main.errorDetails }}</p>
+      </div>
+      <div class="error-image-container">
+        <img :src="errimage" class="error-image" alt="error image" />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.error-container {
-  text-align: center;
-  padding: 20px;
+body {
+  margin: 0;
+  background-color: #f0f4f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.error-image {
-  width: 300px;
-  margin-bottom: 20px;
+.error-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.nav-header {
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 28px;
+  color: #333;
+}
+
+.error-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin: 60px 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.error-content {
+  flex: 1;
+  text-align: left;
 }
 
 .error-text {
-  font-size: 16px;
+  color: #222;
+  margin: 10px 0;
+  max-width: 500px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.error-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.error-image {
+  width: 400px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .error-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .error-text {
+    margin: 20px auto;
+    font-size: 16px;
+  }
+
+  .error-image {
+    width: 300px;
+  }
 }
 </style>
