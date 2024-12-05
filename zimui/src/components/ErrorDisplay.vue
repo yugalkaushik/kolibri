@@ -9,10 +9,6 @@ const errimage = ref(errimageData)
 
 <template>
   <div class="error-page">
-    <nav class="nav-header">
-      <div class="logo">Kolibri</div>
-    </nav>
-
     <div class="error-container">
       <div class="error-content">
         <p class="error-text">{{ main.errorMessage }}</p>
@@ -26,27 +22,12 @@ const errimage = ref(errimageData)
 </template>
 
 <style scoped>
-body {
-  margin: 0;
-  background-color: #f0f4f8;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
 
 .error-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
   text-align: center;
-}
-
-.nav-header {
-  margin-bottom: 40px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 28px;
-  color: #333;
 }
 
 .error-container {
@@ -90,12 +71,12 @@ body {
     flex-direction: column;
     text-align: center;
   }
-
+  
   .error-text {
     margin: 20px auto;
     font-size: 16px;
   }
-
+  
   .error-image {
     width: 300px;
   }
